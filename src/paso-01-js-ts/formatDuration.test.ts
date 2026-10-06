@@ -11,7 +11,11 @@ describe("formatDuration", () => {
     });
 
         test("más de una hora sigue contando minutos", () =>{
-        expect(formatDuration(3725)).toBe("62:05");
+        expect(formatDuration(3725)).toBe("01:02:05");
+    });
+
+    test("una hora con minutos y segundos", () =>{
+        expect(formatDuration(3661)).toBe("01:01:01");
     });
 
     //boundary values - valores límite
@@ -36,7 +40,7 @@ describe("formatDuration", () => {
     });
 
     test("una hora exacta", () =>{
-        expect(formatDuration(3600)).toBe("60:00");
+        expect(formatDuration(3600)).toBe("01:00:00");
     });
 
 
